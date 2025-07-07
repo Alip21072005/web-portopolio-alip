@@ -60,10 +60,9 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
-              Tautan Cepat
+              Navigation
             </h3>
             <ul className="space-y-2">
               {quickLinks.map((item) => (
@@ -72,7 +71,7 @@ const Footer: React.FC = () => {
                     to={item.id}
                     spy={true}
                     smooth={true}
-                    offset={-70} // Sesuaikan offset jika ada header tetap
+                    offset={-70}
                     duration={500}
                     className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md"
                   >
@@ -86,7 +85,7 @@ const Footer: React.FC = () => {
           {/* Social Links */}
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
-              Terhubung
+              Social Media
             </h3>
             <div className="flex items-center space-x-4">
               {socialLinks.map((link, index) => (
@@ -94,7 +93,6 @@ const Footer: React.FC = () => {
                   key={index}
                   href={link.url}
                   target="_blank"
-                  // Hapus rel="noopener noreferrer" untuk mailto links, pertahankan untuk http/https
                   rel={
                     link.url.startsWith("http")
                       ? "noopener noreferrer"

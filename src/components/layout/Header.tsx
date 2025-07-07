@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext"; // Pastikan path ini sesuai dengan struktur proyek Anda
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion"; // Impor AnimatePresence
 import { Sun, Moon, Menu, X } from "lucide-react";
@@ -62,10 +62,7 @@ const Header: React.FC = () => {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        {" "}
-        {/* Tambahkan mx-auto px-4 untuk container */}
-        {/* Logo */}
+      <div className="container mx-auto px-4 flex items-centr justify-between">
         <motion.div
           className="flex items-center"
           initial={{ opacity: 0, x: -20 }}
@@ -81,7 +78,7 @@ const Header: React.FC = () => {
           >
             <span className="text-xl font-bold cursor-pointer">
               <span className="text-indigo-600 dark:text-indigo-400">Alip</span>
-              <span className="text-gray-900 dark:text-white">.Code</span>
+              <span className="text-gray-900 dark:text-white">.Dev</span>
             </span>
           </Link>
         </motion.div>
