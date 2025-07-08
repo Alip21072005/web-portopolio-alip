@@ -1,7 +1,9 @@
+// your-project/src/components/Contact.tsx
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Mail, MapPin, MessageCircleMore, Send } from "lucide-react";
+import { Mail, MapPin, MessageCircleMore, Send } from "lucide-react"; // Pastikan lucide-react terinstal
 
 const Contact: React.FC = () => {
   // `useInView` untuk animasi saat komponen terlihat di viewport
@@ -47,9 +49,10 @@ const Contact: React.FC = () => {
     });
 
     try {
-      // Mengirim data formulir ke endpoint API backend
-      const response = await fetch("http://localhost:5000/api/contact", {
-        // PASTIKAN URL INI SESUAI DENGAN BACKEND ANDA
+      // **PERUBAHAN PENTING DI SINI:**
+      // Mengirim data formulir ke endpoint API backend menggunakan path relatif.
+      // Vercel akan merutekan "/api/contact" ke Serverless Function Anda.
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
