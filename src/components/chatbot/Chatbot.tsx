@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Send, X } from 'lucide-react';
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Send, X } from "lucide-react";
 
 interface ChatbotProps {
   isOpen: boolean;
@@ -9,27 +9,27 @@ interface ChatbotProps {
 
 interface Message {
   id: string;
-  sender: 'user' | 'assistant';
+  sender: "user" | "assistant";
   text: string;
   timestamp: Date;
 }
 
-const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
+const Chatbotasd: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: '1',
-      sender: 'assistant',
+      id: "1",
+      sender: "assistant",
       text: "Yo!! I'm Vikas's AI assistant. I can help you learn more about his work, skills, and experience. What would you like to know?",
       timestamp: new Date(),
     },
   ]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
 
@@ -39,20 +39,20 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
 
     const userMessage: Message = {
       id: Date.now().toString(),
-      sender: 'user',
+      sender: "user",
       text: input,
       timestamp: new Date(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
-    setInput('');
+    setInput("");
     setIsTyping(true);
 
     setTimeout(() => {
       const responseText = generateResponse(input);
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        sender: 'assistant',
+        sender: "assistant",
         text: responseText,
         timestamp: new Date(),
       };
@@ -63,37 +63,42 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
 
   const generateResponse = (userInput: string): string => {
     const input = userInput.toLowerCase();
-    
+
     // Personal information queries
-    if (input.includes('about') || input.includes('who is') || input.includes('background')) {
+    if (
+      input.includes("about") ||
+      input.includes("who is") ||
+      input.includes("background")
+    ) {
       return "Please check the About section on the website for detailed information about Vikas. You can also download his resume for a comprehensive overview of his experience and qualifications.";
     }
-    
+
     // Project queries
-    if (input.includes('project') || input.includes('work')) {
-      const projectInfo = "Vikas has worked on several impressive projects including:\n\n" +
+    if (input.includes("project") || input.includes("work")) {
+      const projectInfo =
+        "Vikas has worked on several impressive projects including:\n\n" +
         "- E-commerce Platform: Full-featured online store with advanced features\n" +
         "- Task Management App: Team collaboration tool with real-time updates\n" +
         "- Weather Dashboard: Interactive weather visualization application\n\n" +
         "For more details, please visit the live demos or check out the GitHub repositories in the Projects section.";
       return projectInfo;
     }
-    
+
     // Skills queries
-    if (input.includes('skill') || input.includes('proficiency')) {
+    if (input.includes("skill") || input.includes("proficiency")) {
       // Check for specific skill queries
       const skillLevels: { [key: string]: number } = {
-        'html': 95,
-        'css': 95,
-        'javascript': 90,
-        'typescript': 85,
-        'react': 90,
-        'tailwind': 88,
-        'node.js': 75,
-        'graphql': 70,
-        'ui/ux': 80,
-        'git': 85,
-        'testing': 78
+        html: 95,
+        css: 95,
+        javascript: 90,
+        typescript: 85,
+        react: 90,
+        tailwind: 88,
+        "node.js": 75,
+        graphql: 70,
+        "ui/ux": 80,
+        git: 85,
+        testing: 78,
       };
 
       for (const [skill, level] of Object.entries(skillLevels)) {
@@ -102,7 +107,8 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
         }
       }
 
-      return "Vikas's key skills and proficiency levels:\n\n" +
+      return (
+        "Vikas's key skills and proficiency levels:\n\n" +
         "Frontend Development:\n" +
         "- HTML/CSS: 95%\n" +
         "- JavaScript: 90%\n" +
@@ -114,12 +120,18 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
         "- GraphQL: 70%\n" +
         "- UI/UX Design: 80%\n" +
         "- Git: 85%\n" +
-        "- Testing: 78%";
+        "- Testing: 78%"
+      );
     }
-    
+
     // Technology stack queries
-    if (input.includes('tech') || input.includes('technolog') || input.includes('stack')) {
-      return "Technologies Vikas works with:\n\n" +
+    if (
+      input.includes("tech") ||
+      input.includes("technolog") ||
+      input.includes("stack")
+    ) {
+      return (
+        "Technologies Vikas works with:\n\n" +
         "- React\n" +
         "- TypeScript\n" +
         "- JavaScript\n" +
@@ -127,19 +139,26 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
         "- CSS3\n" +
         "- Tailwind\n" +
         "- Node.js\n" +
-        "- Git";
+        "- Git"
+      );
     }
-    
+
     // Contact queries
-    if (input.includes('contact') || input.includes('hire') || input.includes('email')) {
-      return "You can contact Vikas through:\n\n" +
+    if (
+      input.includes("contact") ||
+      input.includes("hire") ||
+      input.includes("email")
+    ) {
+      return (
+        "You can contact Vikas through:\n\n" +
         "Email: talawarh316@gmail.com\n" +
         "LinkedIn: https://www.linkedin.com/in/vikas-talawar-407a61257/\n" +
         "Twitter: https://x.com/TalawarVik70120\n" +
         "GitHub: https://github.com/VT-2004\n\n" +
-        "Or use the contact form in the Contact section of the website.";
+        "Or use the contact form in the Contact section of the website."
+      );
     }
-    
+
     // Default response
     return "I can tell you about Vikas's background, projects, skills, or provide contact information. What would you like to know?";
   };
@@ -157,7 +176,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
           {/* Chatbot Header */}
           <div className="p-4 bg-indigo-600 dark:bg-indigo-700 text-white flex items-center justify-between">
             <h3 className="font-semibold">YO!!</h3>
-            <button 
+            <button
               onClick={onClose}
               className="p-1 rounded-full hover:bg-indigo-500 transition-colors"
               aria-label="Close chatbot"
@@ -172,26 +191,26 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
               <div
                 key={message.id}
                 className={`mb-4 ${
-                  message.sender === 'user' ? 'text-right' : 'text-left'
+                  message.sender === "user" ? "text-right" : "text-left"
                 }`}
               >
                 <div
                   className={`inline-block p-3 rounded-lg max-w-[85%] ${
-                    message.sender === 'user'
-                      ? 'bg-indigo-600 text-white rounded-tr-none'
-                      : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-tl-none'
+                    message.sender === "user"
+                      ? "bg-indigo-600 text-white rounded-tr-none"
+                      : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-tl-none"
                   }`}
                 >
-                  {message.text.split('\n').map((line, i) => (
-                    <p key={i} className={i > 0 ? 'mt-2' : ''}>
+                  {message.text.split("\n").map((line, i) => (
+                    <p key={i} className={i > 0 ? "mt-2" : ""}>
                       {line}
                     </p>
                   ))}
                 </div>
                 <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                   {message.timestamp.toLocaleTimeString([], {
-                    hour: '2-digit',
-                    minute: '2-digit',
+                    hour: "2-digit",
+                    minute: "2-digit",
                   })}
                 </div>
               </div>
@@ -220,7 +239,10 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Input Form */}
-          <form onSubmit={handleSendMessage} className="p-3 border-t border-gray-200 dark:border-gray-700 flex">
+          <form
+            onSubmit={handleSendMessage}
+            className="p-3 border-t border-gray-200 dark:border-gray-700 flex"
+          >
             <input
               type="text"
               value={input}
@@ -243,4 +265,4 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default Chatbot;
+export default Chatbotasd;
