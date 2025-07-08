@@ -74,61 +74,96 @@ const Skills: React.FC = () => {
     return parseFloat(percentage.toFixed(2)); // Pembulatan 2 angka di belakang koma
   };
 
-  const frontendSkills = [
+  const webdevSkills = [
     // Ubah new Date(...) dengan tanggal spesifik Anda mulai menggunakan skill tersebut
     {
-      name: "HTML/CSS",
+      name: "HTML",
       level: calculateUsagePercentage(new Date("2023-09-01T00:00:00")),
       durationText: calculateDurationText(new Date("2023-09-01T00:00:00")),
     },
     {
-      name: "JavaScript",
-      level: calculateUsagePercentage(new Date("2020-06-01T10:00:00")),
-      durationText: calculateDurationText(new Date("2020-06-01T10:00:00")),
+      name: "CSS",
+      level: calculateUsagePercentage(new Date("2024-08-01T08:30:00")),
+      durationText: calculateDurationText(new Date("2024-08-01T08:30:00")),
     },
     {
-      name: "TypeScript",
-      level: calculateUsagePercentage(new Date("2022-03-10T14:00:00")),
-      durationText: calculateDurationText(new Date("2022-03-10T14:00:00")),
+      name: "JavaScript",
+      level: calculateUsagePercentage(new Date("2024-09-01T14:00:00")),
+      durationText: calculateDurationText(new Date("2024-09-01T14:00:00")),
+    },
+    {
+      name: "Bootstrap",
+      level: calculateUsagePercentage(new Date("2024-08-20T11:00:00")),
+      durationText: calculateDurationText(new Date("2024-08-20T11:00:00")),
+    },
+    {
+      name: "Tailwind",
+      level: calculateUsagePercentage(new Date("2024-12-18T16:00:00")),
+      durationText: calculateDurationText(new Date("2024-12-18T16:00:00")),
+    },
+    {
+      name: "Figma",
+      level: calculateUsagePercentage(new Date("2024-12-06T19:00:00")),
+      durationText: calculateDurationText(new Date("2024-12-06T19:00:00")),
+    },
+    {
+      name: "PHP",
+      level: calculateUsagePercentage(new Date("2024-08-20T11:00:00")),
+      durationText: calculateDurationText(new Date("2024-08-20T11:00:00")),
+    },
+    {
+      name: "Laravel",
+      level: calculateUsagePercentage(new Date("2025-05-17T08:00:00")),
+      durationText: calculateDurationText(new Date("2025-05-17T08:00:00")),
     },
     {
       name: "React",
-      level: calculateUsagePercentage(new Date("2022-05-20T11:00:00")),
-      durationText: calculateDurationText(new Date("2022-05-20T11:00:00")),
+      level: calculateUsagePercentage(new Date("2024-12-20T03:12:00")),
+      durationText: calculateDurationText(new Date("2024-12-20T03:12:00")),
     },
     {
-      name: "Tailwind CSS",
-      level: calculateUsagePercentage(new Date("2023-01-05T16:00:00")),
-      durationText: calculateDurationText(new Date("2023-01-05T16:00:00")),
+      name: "Node.js",
+      level: calculateUsagePercentage(new Date("2024-12-19T23:12:00")),
+      durationText: calculateDurationText(new Date("2024-12-19T23:12:00")),
+    },
+    {
+      name: "Next.js",
+      level: calculateUsagePercentage(new Date("2024-12-30T00:00:00")),
+      durationText: calculateDurationText(new Date("2024-12-30T00:00:00")),
+    },
+    {
+      name: "Git",
+      level: calculateUsagePercentage(new Date("2025-02-01T00:00:00")),
+      durationText: calculateDurationText(new Date("2025-02-01T00:00:00")),
     },
   ];
 
   const otherSkills = [
     // Dan di sini untuk skill lainnya
     {
-      name: "Node.js",
-      level: calculateUsagePercentage(new Date("2021-02-01T08:00:00")),
-      durationText: calculateDurationText(new Date("2021-02-01T08:00:00")),
+      name: "Video Editing",
+      level: calculateUsagePercentage(new Date("2019-02-01T08:00:00")),
+      durationText: calculateDurationText(new Date("2019-02-01T08:00:00")),
     },
     {
-      name: "GraphQL",
-      level: calculateUsagePercentage(new Date("2023-07-01T13:00:00")),
-      durationText: calculateDurationText(new Date("2023-07-01T13:00:00")),
+      name: "Desain Grafis",
+      level: calculateUsagePercentage(new Date("2020-07-01T13:00:00")),
+      durationText: calculateDurationText(new Date("2020-07-01T13:00:00")),
     },
     {
-      name: "UI/UX Design",
-      level: calculateUsagePercentage(new Date("2019-11-01T09:00:00")),
-      durationText: calculateDurationText(new Date("2019-11-01T09:00:00")),
+      name: "Guitar",
+      level: calculateUsagePercentage(new Date("2021-05-01T09:00:00")),
+      durationText: calculateDurationText(new Date("2021-05-01T09:00:00")),
     },
     {
-      name: "Git",
-      level: calculateUsagePercentage(new Date("2020-03-01T10:00:00")),
-      durationText: calculateDurationText(new Date("2020-03-01T10:00:00")),
+      name: "Public Speaking",
+      level: calculateUsagePercentage(new Date("2017-01-01T08:00:00")),
+      durationText: calculateDurationText(new Date("2017-01-01T08:00:00")),
     },
     {
-      name: "Testing (Jest, RTL)",
-      level: calculateUsagePercentage(new Date("2022-08-15T15:00:00")),
-      durationText: calculateDurationText(new Date("2022-08-15T15:00:00")),
+      name: "Rubik's Cube",
+      level: calculateUsagePercentage(new Date("2016-09-15T15:00:00")),
+      durationText: calculateDurationText(new Date("2016-09-15T15:00:00")),
     },
   ];
 
@@ -155,7 +190,7 @@ const Skills: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <h2>Keahlian Saya</h2>
+          <h2>My Skills</h2>
           <div className="w-24 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto mt-4"></div>
         </motion.div>
 
@@ -166,9 +201,13 @@ const Skills: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Persentase di bawah ini menunjukkan **proporsi waktu hidup saya** yang
-          telah saya dedikasikan untuk mempelajari atau menggunakan setiap
-          teknologi, terhitung sejak tanggal lahir saya pada 21 Juli 2005.
+          Persentase di bawah ini menunjukkan{" "}
+          <span className="font-semibold text-indigo-600">
+            proporsi waktu hidup saya
+          </span>{" "}
+          yang telah saya dedikasikan untuk mempelajari atau menggunakan hal
+          tersebut, terhitung sejak tanggal lahir saya pada{" "}
+          <span className="font-semibold text-blue-600">21 Juli 2005</span>.
           Semakin tinggi persentasenya, semakin besar bagian dari hidup saya
           yang terkait dengan keahlian tersebut. Durasi spesifiknya juga
           ditampilkan untuk setiap keahlian.
@@ -184,7 +223,7 @@ const Skills: React.FC = () => {
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Pengembangan Web
+              Web Development
             </motion.h3>
             <motion.div
               variants={containerVariants}
@@ -192,7 +231,7 @@ const Skills: React.FC = () => {
               animate={inView ? "visible" : "hidden"}
               className="space-y-5"
             >
-              {frontendSkills.map((skill, index) => (
+              {webdevSkills.map((skill, index) => (
                 <SkillBar
                   key={index}
                   name={skill.name}
@@ -212,7 +251,7 @@ const Skills: React.FC = () => {
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Keahlian Lainnya
+              Other Skills
             </motion.h3>
             <motion.div
               variants={containerVariants}
@@ -226,47 +265,12 @@ const Skills: React.FC = () => {
                   name={skill.name}
                   level={skill.level}
                   durationText={skill.durationText}
-                  delay={(index + frontendSkills.length) * 0.1}
+                  delay={(index + webdevSkills.length) * 0.1}
                 />
               ))}
             </motion.div>
           </div>
         </div>
-
-        {/* Tech Stack Logos */}
-        <motion.div
-          className="mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            Teknologi yang Saya Kuasai
-          </h3>
-          <div className="flex flex-wrap justify-center gap-8 items-center">
-            {[
-              "React",
-              "TypeScript",
-              "JavaScript",
-              "HTML5",
-              "CSS3",
-              "Tailwind",
-              "Node.js",
-              "Git",
-            ].map((tech, index) => (
-              <motion.div
-                key={index}
-                className="p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md w-24 h-24 flex items-center justify-center"
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.3 }}
-              >
-                <span className="font-medium text-gray-800 dark:text-gray-200">
-                  {tech}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

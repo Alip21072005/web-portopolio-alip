@@ -13,8 +13,7 @@ const About: React.FC = () => {
 
   useEffect(() => {
     const calculateExperience = () => {
-      // Mengubah tanggal mulai menjadi 1 Januari 2024
-      const startDate = new Date("2024-01-01T00:00:00Z");
+      const startDate = new Date("2023-09-01T00:00:00Z"); // Tanggal mulai pengalaman
       const now = new Date();
       const diff = now.getTime() - startDate.getTime(); // Selisih dalam milidetik
 
