@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import ProjectCard from '../ui/ProjectCard';
-import { projectsData } from '../../data/projectsData';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import ProjectCard from "../ui/ProjectCard";
+import { projectsData } from "../../data/projectsData";
 
 const Projects: React.FC = () => {
   const [ref, inView] = useInView({
@@ -10,13 +10,28 @@ const Projects: React.FC = () => {
     threshold: 0.1,
   });
 
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState("all");
 
-  const categories = ['all', 'react', 'typescript', 'tailwind', 'api'];
+  const categories = [
+    "all",
+    "HTML",
+    "CSS",
+    "Tailwind",
+    "Bootstrap",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "MySQL",
+    "Prisma",
+  ];
 
-  const filteredProjects = filter === 'all' 
-    ? projectsData 
-    : projectsData.filter(project => project.technologies.includes(filter));
+  const filteredProjects =
+    filter === "all"
+      ? projectsData
+      : projectsData.filter((project) => project.technologies.includes(filter));
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,7 +57,7 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Filter Buttons */}
-        <motion.div 
+        <motion.div
           className="flex flex-wrap justify-center gap-3 mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -54,8 +69,8 @@ const Projects: React.FC = () => {
               onClick={() => setFilter(category)}
               className={`px-4 py-2 rounded-md capitalize transition-all duration-300 ${
                 filter === category
-                  ? 'bg-indigo-600 dark:bg-indigo-500 text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
+                  ? "bg-indigo-600 dark:bg-indigo-500 text-white"
+                  : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
               }`}
             >
               {category}
