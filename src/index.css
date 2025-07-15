@@ -5,14 +5,19 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   body {
     @apply bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight;
   }
 
@@ -37,7 +42,7 @@
   .container {
     @apply px-4 mx-auto max-w-7xl;
   }
-  
+
   .section {
     @apply py-16 md:py-24;
   }
@@ -61,7 +66,7 @@
   .btn-outline {
     @apply border-2 border-gray-300 hover:border-indigo-500 dark:border-gray-700 dark:hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 focus:ring-indigo-500;
   }
-  
+
   .card {
     @apply bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300;
   }

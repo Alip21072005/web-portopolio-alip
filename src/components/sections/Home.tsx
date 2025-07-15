@@ -63,7 +63,7 @@ const Home: React.FC = () => {
           >
             {/* Tombol Download CV */}
             <a
-              href="/path/to/your/cv_alip_maulana.pdf" // Ganti dengan path CV Anda yang sebenarnya
+              href="/cv/cv-alip-maulana-fd.pdf" // Ganti dengan path CV Anda yang sebenarnya
               download="cv_alip_maulana.pdf" // Nama file saat diunduh
               className="focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md"
             >
